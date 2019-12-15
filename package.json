@@ -4,8 +4,7 @@
   "description": "A Patatap clone",
   "main": "zentatap.html",
   "scripts": {
-    "start": "serve",
-    "start": "node zentatap.html"
+    "start": "serve"
   },
   "author": "Andrew",
   "license": "ISC",
