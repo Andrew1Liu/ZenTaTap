@@ -7,9 +7,5 @@
     "node_modules",
     "sounds",
     "README.md",
-    ".heroku",
-    ".profile.d",
-    "package-lock.json",
-    "package.json"
   ]
 },
