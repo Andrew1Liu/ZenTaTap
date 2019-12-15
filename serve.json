@@ -5,6 +5,8 @@
     "serve.json",
     ".config",
     "node_modules",
-    "sounds"
+    "sounds",
+    ".heroku",
+    ".profile.d"
   ]
 }
