@@ -5,7 +5,6 @@
     "serve.json",
     ".config",
     "node_modules",
-    "sounds",
-    "README.md",
+    "sounds"
   ]
 }
