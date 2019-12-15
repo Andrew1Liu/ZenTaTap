@@ -8,14 +8,9 @@
     "sounds",
     ".heroku",
     ".profile.d",
-    "README.md",
     "package-lock.json",
     "package.json"
   ]
-},
-
-{
-  "renderSingle": true
 }
 
 
