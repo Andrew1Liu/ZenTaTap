@@ -1,10 +1,14 @@
 {
   "name": "Zentatap",
   "version": "1.0.0",
-  "description": "this is a Patatap clone with different sounds and animations",
+  "description": "A Patatap clone",
+  "main": "zentatap.html",
   "scripts": {
-    "start": "serve",
+    "start": "serve"
   },
+  "author": "Andrew",
+  "license": "ISC",
   "dependencies": {
     "serve": "^10.0.1"
   }
+}
