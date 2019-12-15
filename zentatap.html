@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zentatap</title>
+	<script type="text/javascript" src="paper-full.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.js"></script>
+	<link rel="stylesheet" type="text/css" href="zentatap.css">
+
+	<script type="text/paperscript" canvas="myCanvas">
+			var keyData = {
+			q: {
+				sound: new Howl({
+		  		urls: ['sounds/Q-Beach.mp3']
+				})
+			},
+			w: {
+				sound: new Howl({
+		  		urls: ['sounds/W-Bubble1.mp3']
+				})
+			},
+			e: {
+				sound: new Howl({
+		  		urls: ['sounds/E-Rain.mp3']
+				})
+			},
+			r: {
+				sound: new Howl({
+		  		urls: ['sounds/R-Bubble2.mp3']
+				})
+			},
+			t: {
+				sound: new Howl({
+		  		urls: ['sounds/T-OceanWave.mp3']
+				})
+			},
+			y: {
+				sound: new Howl({
+		  		urls: ['sounds/Y-BeachWave.mp3']
+				})
+			},
+			u: {
+				sound: new Howl({
+		  		urls: ['sounds/U-Water.mp3']
+				})
+			},
+			i: {
+				sound: new Howl({
+		  		urls: ['sounds/I-BubbleQuiet.mp3']
+				})
+			},
+			o: {
+				sound: new Howl({
+					urls: ['sounds/O-Bubble3D.mp3']
+				})
+			},
+			p: {
+				sound: new Howl({
+		  		urls: ['sounds/P-Rain2.mp3']
+				})
+			},
+			a: {
+				sound: new Howl({
+		  		urls: ['sounds/A-Harp1.mp3']
+				})
+			},
+			s: {
+				sound: new Howl({
+		  		urls: ['sounds/S-Harp2.mp3']
+				})
+			},
+				d: {
+				sound: new Howl({
+		  		urls: ['sounds/D-Harp3.mp3']
+				})
+			},
+			f: {
+				sound: new Howl({
+		  		urls: ['sounds/F-Harp4.mp3']
+				})
+			},
+			g: {
+				sound: new Howl({
+		  		urls: ['sounds/G-Harp5.mp3']
+				})
+			},
+			h: {
+				sound: new Howl({
+		  		urls: ['sounds/H-Harp6.mp3']
+				})
+			},
+			j: {
+				sound: new Howl({
+		  		urls: ['sounds/J-Harp7.mp3']
+				})
+			},
+			k: {
+				sound: new Howl({
+		  		urls: ['sounds/K-Fireplace.mp3']
+				})
+			},
+			l: {
+				sound: new Howl({
+		  		urls: ['sounds/L-MusicBox.mp3']
+				})
+			},
+			z: {
+				sound: new Howl({
+		  		urls: ['sounds/Z-Frog.mp3']
+				})
+			},
+			x: {
+				sound: new Howl({
+		  		urls: ['sounds/X-BirdSong.mp3']
+				})
+			},
+			c: {
+				sound: new Howl({
+		  		urls: ['sounds/C-Cricket.mp3']
+				})
+			},
+			v: {
+				sound: new Howl({
+		  		urls: ['sounds/V-Shorebirds.mp3']
+				})
+			},
+			b: {
+				sound: new Howl({
+		  		urls: ['sounds/B-Rainforest.mp3']
+				})
+			},
+			n: {
+				sound: new Howl({
+					urls: ['sounds/N-MusicBox2.mp3']
+				})
+			},
+			m: {
+				sound: new Howl({
+		  		urls: ['sounds/M-WindChime.mp3']
+				})
+			}
+		}
+
+		var text = new PointText({
+			point: [20, 30],
+			fillColor: 'white',
+			content: 'Press Any Key, A to Z and Spacebar',
+			fontSize: 18
+		});
+
+		var bubbles = [];
+		var numBubbles = 8;
+
+		function runBubbles (){
+			for(i=0; i<numBubbles; i++){
+				var point= Point.random() * view.size;
+				var radius = 8 + Math.random() * 5;
+				var newBubble = new Path.Circle(point, radius);  
+				newBubble.fillColor = {
+				    gradient: {
+				        stops: [['#006db0',0.80], ['#86faff', 0.85], ['white', 1]],
+				        radial: true
+				    },
+				    origin: newBubble.position,
+				    destination: newBubble.bounds.rightCenter
+				};			
+				bubbles.push(newBubble);
+			};
+		};
+
+		function onKeyDown(event) {
+			if(keyData[event.key]){
+				runBubbles();
+				keyData[event.key].sound.play();
+				text.remove();
+			}
+		}
+
+		function onFrame(event)	{
+			for(var i = 0; i < bubbles.length; i++){
+				bubbles[i].position.y += -3 + Math.random()*0.5;
+	        	bubbles[i].position.x += Math.random() * 3 - 1;
+	        	if(bubbles[i].y > view.size.height){
+	        	bubbles[i].remove();
+	          	bubbles.splice(i, 1);
+				}
+			}
+		}
+
+
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
