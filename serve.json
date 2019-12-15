@@ -7,12 +7,10 @@
     "node_modules",
     "sounds",
     ".heroku",
-    ".profile.d"
+    ".profile.d",
+    "package.json",
+    "package-lock.json"
   ]
 },
 
-{
-  "redirects": [
-    { "source": "/", "destination": "/zentatap" },
-  ]
-}
+
