@@ -1,6 +1,11 @@
 {
   "unlisted": [
     "paper-full.js",
-    "zentatap.css"
+    "zentatap.css",
+    "serve.json",
+    ".config",
+    "node_modules",
+    "sounds",
+    "README.md"
   ]
 }
