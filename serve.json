@@ -7,7 +7,7 @@
     "node_modules",
     "sounds",
     ".heroku",
-    ".profile.d",
+    ".profile.d"
   ]
 },
 
