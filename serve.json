@@ -8,8 +8,6 @@
     "sounds",
     ".heroku",
     ".profile.d",
-    "package.json",
-    "package-lock.json"
   ]
 },
 
