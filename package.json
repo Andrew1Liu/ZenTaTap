@@ -1,13 +1,10 @@
 {
-  "name": "v1",
+  "name": "Zentatap",
   "version": "1.0.0",
-  "description": "YelpCamp v1",
-  "main": "app.js",
+  "description": "this is a Patatap clone with different sounds and animations",
   "scripts": {
-    "start": "serve zentatap.html"
+    "start": "serve",
   },
-  "author": "Andrew Liu",
-  "license": "ISC",
   "dependencies": {
+    "serve": "^10.0.1"
   }
-}
