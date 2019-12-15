@@ -9,4 +9,10 @@
     ".heroku",
     ".profile.d"
   ]
+},
+
+{
+  "redirects": [
+    { "source": "/", "destination": "/zentatap" },
+  ]
 }
